@@ -1,0 +1,424 @@
+<title>Pixels Criativos</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Pixels Criativos: tráfego pago, Google Meu Negócio, redes sociais, marca, design gráfico e sites para sua empresa decolar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Sora:wght@300;400;600&display=swap">
+<style>
+/* Layout: full-bleed space scenes (porthole hero, floating astronaut) framing a quiet console grid of six missions. Single dark look by choice. */
+:root{
+  color-scheme: dark;
+  --void:#140932;      /* espaço profundo */
+  --hull:#211152;      /* painel da nave */
+  --plasma:#7A2CF5;    /* roxo do banner */
+  --signal:#8DF23C;    /* verde do planeta */
+  --sol:#FFD43B;       /* amarelo da apresentação */
+  --ink:#F3EFFF;
+  --mute:#B1A4DB;
+  --line:rgba(177,164,219,.18);
+  --display:"Chakra Petch","Arial Narrow",system-ui,sans-serif;
+  --body:"Sora",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --gut:max(16px, env(safe-area-inset-left, 0px));
+  --gutr:max(16px, env(safe-area-inset-right, 0px));
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--void);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--void)}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.02;letter-spacing:-.01em;text-wrap:balance;margin:0}
+
+/* ---------- botões ---------- */
+.btn{display:inline-flex;align-items:center;gap:.6em;font:600 1rem/1 var(--display);letter-spacing:.02em;text-decoration:none;padding:1.05em 1.5em;border-radius:6px;transition:transform .18s,background-color .18s,box-shadow .18s;white-space:nowrap}
+.btn svg{width:1.25em;height:1.25em;flex:none}
+.btn-go{background:var(--signal);color:#150a33;box-shadow:0 0 0 0 rgba(141,242,60,.5)}
+.btn-go:hover{transform:translateY(-2px);box-shadow:0 10px 34px -8px rgba(141,242,60,.65)}
+.btn-go:active{transform:scale(.97)}
+.btn-ghost{color:var(--ink);border:1px solid rgba(243,239,255,.35)}
+.btn-ghost:hover{border-color:var(--ink);background:rgba(243,239,255,.06)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;top:env(safe-area-inset-top,0px);left:0;right:0;z-index:50;transition:background-color .3s,border-color .3s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(20,9,50,.86);backdrop-filter:blur(10px);border-color:var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{height:40px;width:auto}
+.brand .w{height:38px}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0;font-size:.92rem}
+.nav ul a{text-decoration:none;color:var(--mute);transition:color .2s}
+.nav ul a:hover{color:var(--ink)}
+.nav .btn{padding:.8em 1.1em;font-size:.9rem}
+
+/* ---------- hero: escotilha ---------- */
+.hero{position:relative;min-height:min(880px,100svh);overflow:hidden;container-type:size;height:min(880px,100svh);display:flex;align-items:center;isolation:isolate}
+.stage{position:absolute;top:50%;left:57%;width:max(108cqw,177.78cqh);aspect-ratio:16/9;transform:translate(-50%,-50%);z-index:-2}
+.stage .plx{position:absolute;inset:0;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.stage .bg img{width:100%;height:100%;object-fit:cover;transform-origin:51% 50%;animation:planet 22s ease-in-out infinite alternate}
+.stage .sun{position:absolute;inset:0;background:radial-gradient(28% 34% at 30% 22%,rgba(160,255,90,.42),transparent 70%);mix-blend-mode:screen;animation:sweep 16s ease-in-out infinite alternate}
+.stage .astro{position:absolute;left:36.25%;top:20.14%;width:36.1%}
+.stage .astro img{width:100%;transform-origin:50% 100%;animation:breathe 7s ease-in-out infinite}
+.beacon{position:absolute;left:94.4%;top:55.4%;width:1.1%;aspect-ratio:1;border-radius:50%;background:var(--signal);box-shadow:0 0 18px 6px rgba(141,242,60,.7);animation:blink 2.4s steps(1) infinite}
+#dust{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,9,50,.92) 0%,rgba(20,9,50,.7) 34%,rgba(20,9,50,0) 62%),linear-gradient(0deg,var(--void) 0%,rgba(20,9,50,0) 26%)}
+.hero .wrap{width:100%;padding-top:72px}
+.hero-copy{max-width:600px}
+.hero h1{font-size:clamp(2.6rem,6.2vw,5rem);font-weight:700}
+.hero h1 .ln{display:block;clip-path:inset(0 100% 0 0);animation:pix .9s steps(9) forwards}
+.hero h1 .ln:nth-child(2){animation-delay:.35s}
+.hero h1 .ln:nth-child(3){animation-delay:.7s}
+.hero p{font-size:clamp(1.02rem,1.5vw,1.15rem);color:var(--mute);max-width:46ch;margin:1.4rem 0 2rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:12px}
+@keyframes pix{to{clip-path:inset(0 0 0 0)}}
+@keyframes planet{0%{transform:scale(1.03) rotate(-1.2deg)}100%{transform:scale(1.09) rotate(1.4deg)}}
+@keyframes sweep{0%{transform:translate(-6%,-4%);opacity:.55}100%{transform:translate(14%,10%);opacity:1}}
+@keyframes breathe{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-1.1%) rotate(.5deg)}}
+@keyframes blink{0%,70%{opacity:1}71%,100%{opacity:.15}}
+
+/* ---------- clientes ---------- */
+.clients{padding-block:56px 72px;border-bottom:1px solid var(--line)}
+.clients h2{font:400 .98rem/1.4 var(--body);color:var(--mute);text-align:center;margin-bottom:34px}
+.clients h2 b{color:var(--ink);font-weight:600}
+.belt{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.belt+.belt{margin-top:30px}
+.track{display:flex;align-items:center;width:max-content;animation:belt 48s linear infinite}
+.belt.rev .track{animation-direction:reverse;animation-duration:56s}
+.belt:hover .track{animation-play-state:paused}
+.track{--la:8200}
+.track img{height:46px;width:auto;margin-inline:34px;opacity:.75;transition:opacity .25s;align-self:center}
+.track img:hover{opacity:1}
+@keyframes belt{to{transform:translateX(-50%)}}
+
+/* ---------- soluções ---------- */
+.sol{padding-block:110px 100px}
+.head{display:grid;grid-template-columns:1.1fr 1fr;gap:28px 60px;align-items:end;margin-bottom:54px}
+.head h2{font-size:clamp(2.1rem,4.4vw,3.4rem)}
+.head p{color:var(--mute);margin:0;max-width:44ch}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.mod{position:relative;padding:34px 30px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:12px;min-width:0;overflow:hidden}
+.mod::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 60% at 20% 0%,rgba(122,44,245,.28),transparent 70%);opacity:0;transition:opacity .35s;z-index:-1}
+.mod:hover::before{opacity:1}
+.mod svg.g{width:46px;height:46px;color:var(--signal);margin-bottom:10px}
+.mod h3{font-size:1.9rem}
+.mod .kind{font:600 .82rem/1.3 var(--body);color:var(--sol);margin:0;letter-spacing:.01em}
+.mod p.d{color:var(--mute);margin:0;font-size:.95rem;flex:1}
+.mod a{margin-top:10px;align-self:flex-start;font:600 .92rem/1 var(--display);color:var(--signal);text-decoration:none;display:inline-flex;align-items:center;gap:.5em;padding:.55em 0;border-bottom:1px solid rgba(141,242,60,.35);transition:gap .2s,border-color .2s}
+.mod a:hover{gap:.85em;border-color:var(--signal)}
+.mod a svg{width:1.1em;height:1.1em}
+
+/* ---------- missão: astronauta flutuando ---------- */
+.mission{position:relative;overflow:hidden;isolation:isolate;container-type:inline-size}
+.space{position:absolute;inset:0;z-index:-2}
+.space .bgi{position:absolute;inset:-4%;background:url(a/cover_bg.webp) 70% 50%/cover no-repeat;animation:drift 40s ease-in-out infinite alternate}
+.mission::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(20,9,50,.94) 0%,rgba(20,9,50,.72) 40%,rgba(20,9,50,.08) 70%),linear-gradient(180deg,var(--void),transparent 18%,transparent 82%,var(--void))}
+.floater{position:absolute;right:2%;top:50%;width:min(46%,600px);transform:translateY(-50%);z-index:-1;pointer-events:none}
+.floater img{width:100%;animation:float 11s ease-in-out infinite;-webkit-mask-image:linear-gradient(180deg,#000 78%,transparent);mask-image:linear-gradient(180deg,#000 78%,transparent);filter:drop-shadow(0 30px 60px rgba(122,44,245,.45))}
+.mission .wrap{padding-block:130px}
+.mission .txt{max-width:590px}
+.mission h2{font-size:clamp(2.2rem,4.6vw,3.6rem)}
+.mission .lead{color:var(--mute);font-size:1.08rem;margin:1.4rem 0 2.6rem;max-width:50ch}
+.mission .lead b{color:var(--ink);font-weight:600}
+.res{margin:0 0 .9rem;padding:0;list-style:none;border-top:1px solid var(--line)}
+.res li{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;padding:18px 0;border-bottom:1px solid var(--line)}
+.res .v{font:700 clamp(1.5rem,3vw,2rem)/1.1 var(--display);color:var(--ink);display:flex;flex-wrap:wrap;align-items:center;gap:.35em}
+.res .v i{font-style:normal;color:var(--signal);font-size:.8em}
+.res .v em{font-style:normal;color:var(--sol)}
+.res p{margin:0;color:var(--mute);font-size:.95rem}
+.res-note{font-size:.8rem;color:var(--mute);opacity:.8;margin:0 0 2.4rem;max-width:52ch}
+.mission h3.sub{font-size:1.3rem;margin-bottom:1rem}
+.who{list-style:none;margin:0 0 2.6rem;padding:0;display:grid;gap:14px}
+.who li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:.98rem}
+.who li::before{content:"";width:10px;height:10px;margin-top:.55em;background:var(--signal);box-shadow:0 0 12px rgba(141,242,60,.8)}
+.who b{font-weight:600}
+@keyframes float{0%{transform:translate(0,0) rotate(-3deg)}50%{transform:translate(-3%,-4%) rotate(2.5deg)}100%{transform:translate(0,0) rotate(-3deg)}}
+@keyframes drift{to{transform:translate(-2.5%,1.5%) scale(1.04)}}
+
+/* ---------- plano de voo ---------- */
+.flight{padding-block:100px}
+.flight h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:46px}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:40px;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:repeating-linear-gradient(90deg,var(--line) 0 6px,transparent 6px 12px)}
+.steps li{counter-increment:s;position:relative}
+.steps li::before{content:counter(s);display:grid;place-items:center;width:54px;height:54px;border-radius:50%;background:var(--hull);border:1px solid var(--plasma);font:700 1.2rem/1 var(--display);color:var(--signal);margin-bottom:22px;position:relative}
+.steps h3{font-size:1.45rem;margin-bottom:.5rem}
+.steps p{color:var(--mute);margin:0;font-size:.96rem;max-width:34ch}
+
+/* ---------- cta final ---------- */
+.launch{padding-block:30px 110px}
+.pad{position:relative;overflow:hidden;border-radius:18px;background:radial-gradient(120% 140% at 85% 0%,rgba(141,242,60,.22),transparent 45%),linear-gradient(135deg,#3b17a0,var(--plasma) 55%,#5212b8);padding:clamp(40px,7vw,80px) clamp(24px,6vw,72px);display:grid;grid-template-columns:1.3fr auto;gap:30px 50px;align-items:center}
+.pad::after{content:"";position:absolute;right:-60px;bottom:-120px;width:340px;height:340px;background:url(a/logo_icon.webp) center/contain no-repeat;opacity:.13;transform:rotate(-14deg);pointer-events:none}
+.pad h2{font-size:clamp(2.3rem,5.6vw,4.4rem);font-weight:700}
+.pad p{margin:1rem 0 0;color:rgba(243,239,255,.86);max-width:44ch}
+.pad .btn{font-size:1.08rem;padding:1.2em 1.7em;position:relative;z-index:1}
+
+/* ---------- rodapé ---------- */
+footer{border-top:1px solid var(--line);padding-block:44px calc(44px + env(safe-area-inset-bottom,0px));font-size:.9rem;color:var(--mute)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:24px 40px;align-items:center;justify-content:space-between}
+footer img{height:64px;width:auto}
+footer nav{display:flex;flex-wrap:wrap;gap:12px 28px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--ink)}
+
+/* ---------- botão flutuante ---------- */
+.fab{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:55;width:60px;height:60px;border-radius:50%;background:var(--signal);color:#150a33;display:grid;place-items:center;box-shadow:0 10px 30px -6px rgba(141,242,60,.6);transition:transform .25s,opacity .25s;opacity:0;transform:scale(.5);pointer-events:none}
+.fab.on{opacity:1;transform:scale(1);pointer-events:auto}
+.fab.on:hover{transform:scale(1.06)}
+.fab svg{width:30px;height:30px}
+.fab::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--signal);animation:ping 2.6s ease-out infinite}
+@keyframes ping{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.6);opacity:0}}
+
+/* ---------- responsivo ---------- */
+@media (max-width:980px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .head{grid-template-columns:1fr}
+  .nav ul{display:none}
+}
+@media (max-width:720px){
+  .hero{height:auto;min-height:0;display:block;container-type:inline-size}
+  .stage{top:0;left:50%;width:205cqw;transform:translate(-54.3%,0)}
+  .hero::after{background:linear-gradient(0deg,var(--void) 0%,var(--void) calc(100% - 115cqw),rgba(20,9,50,0) calc(100% - 70cqw))}
+  .hero .wrap{padding-top:calc(24px + 88cqw);padding-bottom:56px}
+  .hero .ctas .btn{flex:1 1 100%;justify-content:center}
+  .nav .btn span{display:none}
+  .grid{grid-template-columns:1fr}
+  .mod{padding:28px 22px}
+  .floater{position:relative;right:auto;top:auto;transform:none;width:78%;margin:40px auto -40px;max-width:420px}
+  .mission .wrap{padding-block:20px 90px}
+  .mission::after{background:linear-gradient(180deg,var(--void) 0%,rgba(20,9,50,.35) 20%,rgba(20,9,50,.85) 52%,var(--void) 100%)}
+  .steps{grid-template-columns:1fr;gap:30px}
+  .steps::before{left:27px;right:auto;top:0;bottom:0;width:1px;height:auto;background:repeating-linear-gradient(180deg,var(--line) 0 6px,transparent 6px 12px)}
+  .steps li{display:grid;grid-template-columns:54px 1fr;column-gap:18px}
+  .steps li::before{grid-row:span 2;margin:0}
+  .pad{grid-template-columns:1fr}
+  .pad .btn{justify-content:center}
+  .track{--la:4600}
+  .track img{margin-inline:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .hero h1 .ln{clip-path:none}
+  html{scroll-behavior:auto}
+}
+</style>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#topo" aria-label="Pixels Criativos, início">
+      <img src="a/logo_icon.webp" alt="" width="71" height="40">
+      <img class="w" src="a/logo_word.webp" alt="Pixels Criativos" width="55" height="38">
+    </a>
+    <ul>
+      <li><a href="#solucoes">Soluções</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#missao">Quem somos</a></li>
+      <li><a href="#plano">Como funciona</a></li>
+    </ul>
+    <a class="btn btn-go" data-wa="Olá, Pixels! Quero agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg><span>Agendar reunião</span></a>
+  </div>
+</header>
+
+<main id="topo">
+  <section class="hero" id="hero">
+    <div class="stage" aria-hidden="true">
+      <div class="plx bg" data-depth="-6"><img src="a/win_bg.webp" alt="" fetchpriority="high"></div>
+      <div class="plx" data-depth="-4"><div class="sun"></div><span class="beacon"></span></div>
+      <div class="plx" data-depth="14"><div class="astro"><img src="a/win_astro.webp" alt=""></div></div>
+    </div>
+    <canvas id="dust" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-copy">
+        <h1><span class="ln">Estratégia e</span><span class="ln">criatividade para sua</span><span class="ln">empresa decolar.</span></h1>
+        <p>Anúncios, Google, redes sociais, marca, design e sites com o mesmo time, do primeiro briefing ao cliente chamando no WhatsApp.</p>
+        <div class="ctas">
+          <a class="btn btn-go" data-wa="Olá, Pixels! Vi o site e quero agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Agendar reunião no WhatsApp</a>
+          <a class="btn btn-ghost" href="#solucoes">Ver soluções</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="clients" id="clientes" aria-label="Clientes">
+    <h2><b>Marcas que já decolaram com a Pixels.</b> Do escritório de advocacia à sanduicheria.</h2>
+    <div class="belt"><div class="track" id="t1"></div></div>
+    <div class="belt rev"><div class="track" id="t2"></div></div>
+  </section>
+
+  <section class="sol" id="solucoes">
+    <div class="wrap">
+      <div class="head">
+        <h2>Soluções para o crescimento da sua empresa</h2>
+        <p>Seis frentes que funcionam sozinhas ou juntas. Você escolhe por onde começar e a gente monta a rota.</p>
+      </div>
+      <div class="grid">
+        <article class="mod">
+          <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M24 4c7 6 10 14 8 24H16C14 18 17 10 24 4Z"/><circle cx="24" cy="17" r="3.5"/><path d="M16 28l-6 6 7 1M32 28l6 6-7 1"/><path d="M20 33l4 11 4-11"/></svg>
+          <h3>Propulsão</h3>
+          <p class="kind">Tráfego pago no Meta e no Google</p>
+          <p class="d">Anúncios que levam sua empresa até quem já está procurando por ela, com relatório claro do que cada real investido trouxe.</p>
+          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Propulsão (tráfego pago)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Propulsão</a>
+        </article>
+        <article class="mod">
+          <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M24 42s13-12.5 13-23a13 13 0 0 0-26 0c0 10.5 13 23 13 23Z"/><circle cx="24" cy="19" r="4.5"/><ellipse cx="24" cy="42" rx="14" ry="3" stroke-dasharray="3 3"/></svg>
+          <h3>Coordenadas</h3>
+          <p class="kind">Google Meu Negócio</p>
+          <p class="d">Seu perfil no Google completo, bem avaliado e aparecendo no mapa quando alguém da região pesquisa pelo que você vende.</p>
+          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Coordenadas (Google Meu Negócio)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Coordenadas</a>
+        </article>
+        <article class="mod">
+          <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="24" cy="24" r="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(-20 24 24)"/><circle cx="7" cy="31" r="2" fill="currentColor"/><circle cx="41" cy="17" r="2" fill="currentColor"/><circle cx="34" cy="33" r="1.4" fill="currentColor"/></svg>
+          <h3>Gravidade</h3>
+          <p class="kind">Redes sociais</p>
+          <p class="d">Conteúdo e gestão do Instagram com estratégia, para atrair quem vira cliente e manter por perto quem já compra.</p>
+          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Gravidade (redes sociais)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Gravidade</a>
+        </article>
+        <article class="mod">
+          <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="5"/><path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l5.5 5.5M32.5 32.5 38 38M38 10l-5.5 5.5M15.5 32.5 10 38"/></svg>
+          <h3>Big Bang</h3>
+          <p class="kind">Marca e logotipo</p>
+          <p class="d">Logo, identidade visual, naming e redesign. O começo de tudo, construído a partir do seu briefing.</p>
+          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Big Bang (marca e logotipo)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Big Bang</a>
+        </article>
+        <article class="mod">
+          <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 34 18 14l12 8 10-14M18 14l-4 26M30 22l4 18" stroke-dasharray="2.5 2.5"/><g fill="currentColor"><circle cx="8" cy="34" r="2.6"/><circle cx="18" cy="14" r="2.6"/><circle cx="30" cy="22" r="2.6"/><circle cx="40" cy="8" r="2.6"/><circle cx="14" cy="40" r="2.2"/><circle cx="34" cy="40" r="2.2"/></g></svg>
+          <h3>Constelação</h3>
+          <p class="kind">Design gráfico</p>
+          <p class="d">Cartões, cardápios, folders, papelaria e banners que mantêm sua marca com a mesma cara em todo lugar.</p>
+          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Constelação (design gráfico)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Constelação</a>
+        </article>
+        <article class="mod">
+          <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="16" height="16" rx="2"/><path d="M4 20h8v8H4zM36 20h8v8h-8zM12 24h4M32 24h4M24 16V6M20 6h8"/><path d="M20 22h8M20 26h5"/></svg>
+          <h3>Estação Base</h3>
+          <p class="kind">Sites, landing pages e apps</p>
+          <p class="d">O endereço onde o cliente te encontra, entende o que você faz e chama no WhatsApp. Rápido no celular e pronto para anúncios.</p>
+          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Estação Base (sites e apps)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Estação Base</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="mission" id="missao">
+    <div class="space" aria-hidden="true"><div class="bgi"></div></div>
+    <div class="floater" aria-hidden="true"><img src="a/cover_astro.webp" alt=""></div>
+    <div class="wrap">
+      <div class="txt">
+        <h2>Muito mais que uma agência. Um time que cresce junto com a sua empresa.</h2>
+        <p class="lead"><b>Nós acreditamos no seu sonho.</b> Por isso a Pixels entra no seu negócio como parceira: olha como a empresa aparece, como é encontrada, como atrai e como vende, e coloca tudo no mesmo plano. Na terra ou em Marte, o objetivo é um só: fazer a sua empresa crescer.</p>
+        <ul class="who">
+          <li><span><b>Você fala com quem faz.</b> Sem intermediário e sem resposta de robô.</span></li>
+          <li><span><b>Números na mesa.</b> Você sabe o que cada real investido trouxe.</span></li>
+          <li><span><b>Seu objetivo vira o nosso.</b> A gente só comemora quando você vende.</span></li>
+        </ul>
+        <a class="btn btn-go" data-wa="Olá, Pixels! Quero conversar sobre o crescimento da minha empresa." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Quero crescer com a Pixels</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="flight" id="plano">
+    <div class="wrap">
+      <h2>Como funciona</h2>
+      <ol class="steps">
+        <li><h3>Conversa</h3><p>Uma reunião rápida para entender onde sua empresa está e onde quer chegar.</p></li>
+        <li><h3>Plano de voo</h3><p>Proposta sob medida com o que faz sentido agora, sem pacote empurrado.</p></li>
+        <li><h3>Decolagem</h3><p>Execução, acompanhamento e ajustes com você por perto em cada etapa.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="launch">
+    <div class="wrap">
+      <div class="pad">
+        <div>
+          <h2>Pronto para decolar?</h2>
+          <p>Chama a Pixels no WhatsApp e agenda uma reunião. A gente responde e marca o melhor horário para você.</p>
+        </div>
+        <a class="btn btn-go" data-wa="Olá, Pixels! Estou pronto para decolar, quero agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Agendar reunião</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="a/logo_full.webp" alt="Pixels Criativos" width="60" height="64">
+    <nav aria-label="Rodapé">
+      <a href="https://www.instagram.com/pixelscriativos/" target="_blank" rel="noopener">Instagram @pixelscriativos</a>
+      <a href="#" data-wa="Olá, Pixels!">WhatsApp</a>
+      <a href="#solucoes">Soluções</a>
+    </nav>
+    <span>© 2026 Pixels Criativos</span>
+  </div>
+</footer>
+
+<a class="fab" href="#" data-wa="Olá, Pixels! Quero agendar uma reunião." aria-label="Agendar reunião pelo WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg></a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8Zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6A11.8 11.8 0 0 0 24 12.2c0-3.2-1.2-6.1-3.5-8.4Z"/></symbol></svg>
+
+<script>
+/* Número do WhatsApp da Pixels (DDI + DDD + número, só dígitos) */
+const WHATSAPP = "5500000000000";
+
+document.querySelectorAll("[data-wa]").forEach(a => {
+  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(a.dataset.wa);
+  a.target = "_blank"; a.rel = "noopener";
+});
+
+/* Logos dos clientes */
+const L1 = ["frigideira","moura-santos","nina-doces","harpia","nova-saude","braztuga","mais-exata","mender","fisio-baby","del-vargas","wgr","estacio"];
+const L2 = ["toda-linda","carlos-coaching","daniel-mozer","annies","elite-car","olivia-reis","protecao-veicular","jowzn","lumie","best-western","walk"];
+const NAMES = {"moura-santos":"Moura Santos Advogados","nina-doces":"Nina Doces","harpia":"Harpia Gestão de Negócios","braztuga":"Braztuga Seguros","mais-exata":"Mais Exata Corretora de Seguros","mender":"Mender","del-vargas":"Del Vargas Sanduicheria","wgr":"WG²R Desenvolvimento","estacio":"Estácio","carlos-coaching":"Instituto Carlos Coaching","daniel-mozer":"Daniel Mozer","annies":"Annie's English House","olivia-reis":"Olívia Reis Nutrição Funcional","protecao-veicular":"Cadastro Nacional de Proteção Veicular","jowzn":"Jowzn","lumie":"Lumie Shop","best-western":"Best Western Plus","walk":"Walk","frigideira":"Frigideira & Cia Grill","toda-linda":"Toda Linda Atacado","nova-saude":"Clínica Nova Saúde","elite-car":"Elite Car Studio","fisio-baby":"Fisio Baby Desenvolvimento"};
+function fill(id, list){
+  const t = document.getElementById(id);
+  const html = list.map(n => `<img src="a/logos/${n}.webp" alt="${NAMES[n]}">`).join("");
+  t.innerHTML = html + html.replace(/alt="[^"]*"/g,'alt="" aria-hidden="true"');
+  /* mesmo "peso visual" para todos: altura calculada pela área */
+  const size = img => { if (!img.naturalWidth) return; const A = +getComputedStyle(t).getPropertyValue("--la"); const r = img.naturalWidth / img.naturalHeight; img.style.height = Math.max(24, Math.min(68, Math.sqrt(A / r))) + "px"; };
+  t.querySelectorAll("img").forEach(img => img.complete ? size(img) : img.addEventListener("load", () => size(img)));
+  addEventListener("resize", () => t.querySelectorAll("img").forEach(size));
+}
+fill("t1", L1); fill("t2", L2);
+
+/* Nav sólida ao rolar */
+const nav = document.getElementById("nav");
+const fab = document.querySelector(".fab"), heroEl = document.getElementById("hero");
+const onScroll = () => { nav.classList.toggle("solid", scrollY > 40); fab.classList.toggle("on", scrollY > heroEl.offsetHeight * .7); };
+addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* Paralaxe do mouse na escotilha */
+const hero = document.getElementById("hero");
+const layers = hero.querySelectorAll("[data-depth]");
+if (!reduce && matchMedia("(pointer:fine)").matches) {
+  hero.addEventListener("pointermove", e => {
+    const r = hero.getBoundingClientRect();
+    const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    layers.forEach(l => { const d = +l.dataset.depth; l.style.transform = `translate(${x*d}px,${y*d*.6}px)`; });
+  });
+  hero.addEventListener("pointerleave", () => layers.forEach(l => l.style.transform = ""));
+}
+
+/* Poeira estelar na frente da escotilha */
+(() => {
+  const c = document.getElementById("dust"), ctx = c.getContext("2d");
+  let w, h, dpr, motes = [];
+  const size = () => {
+    dpr = Math.min(devicePixelRatio || 1, 2);
+    w = c.clientWidth; h = c.clientHeight; c.width = w*dpr; c.height = h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    motes = Array.from({length: Math.round(w*h/14000)}, () => ({x:Math.random()*w, y:Math.random()*h, r:Math.random()*1.6+.3, vx:(Math.random()-.5)*.12, vy:-(Math.random()*.18+.04), a:Math.random()*.6+.2, g:Math.random()<.25}));
+  };
+  const draw = () => {
+    ctx.clearRect(0,0,w,h);
+    for (const m of motes) {
+      m.x += m.vx; m.y += m.vy;
+      if (m.y < -4) { m.y = h+4; m.x = Math.random()*w; }
+      if (m.x < -4) m.x = w+4; if (m.x > w+4) m.x = -4;
+      ctx.globalAlpha = m.a; ctx.fillStyle = m.g ? "#8DF23C" : "#F3EFFF";
+      ctx.beginPath(); ctx.arc(m.x, m.y, m.r, 0, 6.283); ctx.fill();
+    }
+    if (!reduce) requestAnimationFrame(draw);
+  };
+  size(); draw(); addEventListener("resize", size);
+})();
+</script>
