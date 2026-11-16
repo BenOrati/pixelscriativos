@@ -108,6 +108,10 @@ h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.02;letter-spac
 .mod a:hover{gap:.85em;border-color:var(--signal)}
 .mod a svg{width:1.1em;height:1.1em}
 
+.sol-cta{display:flex;flex-direction:column;align-items:center;gap:14px;margin-top:56px;text-align:center}
+.sol-cta p{margin:0;color:var(--mute)}
+.sol-cta .btn{font-size:1.05rem;padding:1.15em 1.7em;white-space:normal;justify-content:center}
+
 /* ---------- missão: astronauta flutuando ---------- */
 .mission{position:relative;overflow:hidden;isolation:isolate;container-type:inline-size}
 .space{position:absolute;inset:0;z-index:-2}
@@ -215,7 +219,7 @@ footer a:hover{color:var(--ink)}
       <li><a href="#missao">Quem somos</a></li>
       <li><a href="#plano">Como funciona</a></li>
     </ul>
-    <a class="btn btn-go" data-wa="Olá, Pixels! Quero agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg><span>Agendar reunião</span></a>
+    <a class="btn btn-go" data-wa="Oie! Vim pelo seu site e gostaria de agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg><span>Agendar reunião</span></a>
   </div>
 </header>
 
@@ -232,7 +236,7 @@ footer a:hover{color:var(--ink)}
         <h1><span class="ln">Estratégia e</span><span class="ln">criatividade para sua</span><span class="ln">empresa decolar.</span></h1>
         <p>Anúncios, Google, redes sociais, marca, design e sites com o mesmo time, do primeiro briefing ao cliente chamando no WhatsApp.</p>
         <div class="ctas">
-          <a class="btn btn-go" data-wa="Olá, Pixels! Vi o site e quero agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Agendar reunião no WhatsApp</a>
+          <a class="btn btn-go" data-wa="Oie! Vim pelo seu site e gostaria de agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Agendar reunião no WhatsApp</a>
           <a class="btn btn-ghost" href="#solucoes">Ver soluções</a>
         </div>
       </div>
@@ -257,43 +261,47 @@ footer a:hover{color:var(--ink)}
           <h3>Propulsão</h3>
           <p class="kind">Tráfego pago no Meta e no Google</p>
           <p class="d">Anúncios que levam sua empresa até quem já está procurando por ela, com relatório claro do que cada real investido trouxe.</p>
-          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Propulsão (tráfego pago)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Propulsão</a>
+          <a href="#" data-wa="Oie! Vim pelo seu site e gostaria de saber mais sobre Propulsão (tráfego pago)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Propulsão</a>
         </article>
         <article class="mod">
           <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M24 42s13-12.5 13-23a13 13 0 0 0-26 0c0 10.5 13 23 13 23Z"/><circle cx="24" cy="19" r="4.5"/><ellipse cx="24" cy="42" rx="14" ry="3" stroke-dasharray="3 3"/></svg>
           <h3>Coordenadas</h3>
           <p class="kind">Google Meu Negócio</p>
           <p class="d">Seu perfil no Google completo, bem avaliado e aparecendo no mapa quando alguém da região pesquisa pelo que você vende.</p>
-          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Coordenadas (Google Meu Negócio)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Coordenadas</a>
+          <a href="#" data-wa="Oie! Vim pelo seu site e gostaria de saber mais sobre Coordenadas (Google Meu Negócio)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Coordenadas</a>
         </article>
         <article class="mod">
           <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="24" cy="24" r="8"/><ellipse cx="24" cy="24" rx="20" ry="8" transform="rotate(-20 24 24)"/><circle cx="7" cy="31" r="2" fill="currentColor"/><circle cx="41" cy="17" r="2" fill="currentColor"/><circle cx="34" cy="33" r="1.4" fill="currentColor"/></svg>
           <h3>Gravidade</h3>
           <p class="kind">Redes sociais</p>
           <p class="d">Conteúdo e gestão do Instagram com estratégia, para atrair quem vira cliente e manter por perto quem já compra.</p>
-          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Gravidade (redes sociais)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Gravidade</a>
+          <a href="#" data-wa="Oie! Vim pelo seu site e gostaria de saber mais sobre Gravidade (redes sociais)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Gravidade</a>
         </article>
         <article class="mod">
           <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="24" cy="24" r="5"/><path d="M24 4v8M24 36v8M4 24h8M36 24h8M10 10l5.5 5.5M32.5 32.5 38 38M38 10l-5.5 5.5M15.5 32.5 10 38"/></svg>
           <h3>Big Bang</h3>
           <p class="kind">Marca e logotipo</p>
           <p class="d">Logo, identidade visual, naming e redesign. O começo de tudo, construído a partir do seu briefing.</p>
-          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Big Bang (marca e logotipo)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Big Bang</a>
+          <a href="#" data-wa="Oie! Vim pelo seu site e gostaria de saber mais sobre Big Bang (marca e logotipo)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Big Bang</a>
         </article>
         <article class="mod">
           <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 34 18 14l12 8 10-14M18 14l-4 26M30 22l4 18" stroke-dasharray="2.5 2.5"/><g fill="currentColor"><circle cx="8" cy="34" r="2.6"/><circle cx="18" cy="14" r="2.6"/><circle cx="30" cy="22" r="2.6"/><circle cx="40" cy="8" r="2.6"/><circle cx="14" cy="40" r="2.2"/><circle cx="34" cy="40" r="2.2"/></g></svg>
           <h3>Constelação</h3>
           <p class="kind">Design gráfico</p>
           <p class="d">Cartões, cardápios, folders, papelaria e banners que mantêm sua marca com a mesma cara em todo lugar.</p>
-          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Constelação (design gráfico)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Constelação</a>
+          <a href="#" data-wa="Oie! Vim pelo seu site e gostaria de saber mais sobre Constelação (design gráfico)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Constelação</a>
         </article>
         <article class="mod">
           <svg class="g" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><rect x="16" y="16" width="16" height="16" rx="2"/><path d="M4 20h8v8H4zM36 20h8v8h-8zM12 24h4M32 24h4M24 16V6M20 6h8"/><path d="M20 22h8M20 26h5"/></svg>
           <h3>Estação Base</h3>
           <p class="kind">Sites, landing pages e apps</p>
           <p class="d">O endereço onde o cliente te encontra, entende o que você faz e chama no WhatsApp. Rápido no celular e pronto para anúncios.</p>
-          <a href="#" data-wa="Olá, Pixels! Quero saber mais sobre Estação Base (sites e apps)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Estação Base</a>
+          <a href="#" data-wa="Oie! Vim pelo seu site e gostaria de saber mais sobre Estação Base (sites e apps)."><svg viewBox="0 0 24 24" fill="currentColor"><use href="#wa"/></svg>Quero Estação Base</a>
         </article>
+      </div>
+      <div class="sol-cta">
+        <p>Não sabe por onde começar? A gente monta o plano com você.</p>
+        <a class="btn btn-go" data-wa="Oie! Vim pelo seu site e gostaria de agendar uma reunião para ver o melhor plano para mim." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Quero agendar e ver o melhor plano para mim</a>
       </div>
     </div>
   </section>
@@ -310,7 +318,7 @@ footer a:hover{color:var(--ink)}
           <li><span><b>Números na mesa.</b> Você sabe o que cada real investido trouxe.</span></li>
           <li><span><b>Seu objetivo vira o nosso.</b> A gente só comemora quando você vende.</span></li>
         </ul>
-        <a class="btn btn-go" data-wa="Olá, Pixels! Quero conversar sobre o crescimento da minha empresa." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Quero crescer com a Pixels</a>
+        <a class="btn btn-go" data-wa="Oie! Vim pelo seu site e gostaria de agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Quero crescer com a Pixels</a>
       </div>
     </div>
   </section>
@@ -333,7 +341,7 @@ footer a:hover{color:var(--ink)}
           <h2>Pronto para decolar?</h2>
           <p>Chama a Pixels no WhatsApp e agenda uma reunião. A gente responde e marca o melhor horário para você.</p>
         </div>
-        <a class="btn btn-go" data-wa="Olá, Pixels! Estou pronto para decolar, quero agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Agendar reunião</a>
+        <a class="btn btn-go" data-wa="Oie! Vim pelo seu site e gostaria de agendar uma reunião." href="#"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg>Agendar reunião</a>
       </div>
     </div>
   </section>
@@ -344,20 +352,20 @@ footer a:hover{color:var(--ink)}
     <img src="a/logo_full.webp" alt="Pixels Criativos" width="60" height="64">
     <nav aria-label="Rodapé">
       <a href="https://www.instagram.com/pixelscriativos/" target="_blank" rel="noopener">Instagram @pixelscriativos</a>
-      <a href="#" data-wa="Olá, Pixels!">WhatsApp</a>
+      <a href="#" data-wa="Oie! Vim pelo seu site e gostaria de agendar uma reunião.">WhatsApp</a>
       <a href="#solucoes">Soluções</a>
     </nav>
     <span>© 2026 Pixels Criativos</span>
   </div>
 </footer>
 
-<a class="fab" href="#" data-wa="Olá, Pixels! Quero agendar uma reunião." aria-label="Agendar reunião pelo WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg></a>
+<a class="fab" href="#" data-wa="Oie! Vim pelo seu site e gostaria de agendar uma reunião." aria-label="Agendar reunião pelo WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><use href="#wa"/></svg></a>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3ZM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4A9.8 9.8 0 1 1 12 21.8Zm8.4-18.2A11.8 11.8 0 0 0 1.8 17.9L.1 24l6.3-1.6A11.8 11.8 0 0 0 24 12.2c0-3.2-1.2-6.1-3.5-8.4Z"/></symbol></svg>
 
 <script>
 /* Número do WhatsApp da Pixels (DDI + DDD + número, só dígitos) */
-const WHATSAPP = "5500000000000";
+const WHATSAPP = "5521985465025";
 
 document.querySelectorAll("[data-wa]").forEach(a => {
   a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(a.dataset.wa);
